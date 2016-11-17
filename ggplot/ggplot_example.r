@@ -20,6 +20,8 @@ scatter <- ggplot(suicides, aes(x=year, y=deaths)) +
           geom_point()
 
 # split "means" out by color
+# make every mean of the suicide a color
+
 color_by_means <- ggplot(suicides, aes(x=year, y=deaths, color=means)) +
                   geom_point(size=3)
 
@@ -28,6 +30,7 @@ scatter_by_state <- ggplot(suicides, aes(x=year, y=deaths, color=means)) +
                     geom_point(size=3) +
                     facet_wrap(~state)
 
+#different state has different population
 scatter_by_state <- ggplot(suicides, aes(x=year, y=deaths, color=means)) +
                   geom_point(size=3) +
                   facet_wrap(~state, scales="free")
